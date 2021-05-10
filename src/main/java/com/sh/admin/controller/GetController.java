@@ -1,5 +1,7 @@
 package com.sh.admin.controller;
 
+import com.sh.admin.model.SearchParam;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,5 +14,15 @@ public class GetController {
     public String getRequest() {
 
         return "Hi getMethod";
+    }
+
+    @GetMapping("/getMultiParameter")
+    public SearchParam getMultiParameter(SearchParam searchParam) {
+
+        System.out.println(searchParam.getAccount());
+        System.out.println(searchParam.getEmail());
+        System.out.println(searchParam.getPage());
+
+        return searchParam;
     }
 }
