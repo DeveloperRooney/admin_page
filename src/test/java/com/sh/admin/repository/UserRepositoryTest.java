@@ -4,6 +4,7 @@ import com.sh.admin.AdminApplicationTests;
 import com.sh.admin.model.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -28,22 +29,33 @@ public class UserRepositoryTest extends AdminApplicationTests {
     @Test
     public void read() {
 
-        Optional<User> user = userRepository.findById(3L);
+        Optional<User> user = userRepository.findById(2L);
 
         user.ifPresent(selectUser -> {
             System.out.println("user : " + selectUser);
+            System.out.println("email : " + selectUser.getEmail());
         });
-    }
-
-    public void update() {
 
     }
 
     @Test
+    public void update() {
+
+        Optional<User> user = userRepository.findById(2L);
+
+        user.ifPresent(selectUser-> {
+            selectUser.setAccount("업데이트 테스트");
+            selectUser.setUpdatedAt(LocalDateTime.now());
+            selectUser.setUpdatedBy("update method()");
+
+            userRepository.save(selectUser);
+        });
+        
+    }
+
+    @Test
     public void delete() {
-        User user = new User();
-        user.setAccount("KIMSUHAN");
-        userRepository.delete(user);
+
 
     }
 
