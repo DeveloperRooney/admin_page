@@ -35,7 +35,8 @@ public class UserRepositoryTest extends AdminApplicationTests {
     @Transactional
     public void read() {
 
-        Optional<User> user = userRepository.findById(4L);
+        // select * from user where id = ?
+        Optional<User> user = userRepository.findByAccount("김수한");
 
         user.ifPresent(selectUser -> {
 
