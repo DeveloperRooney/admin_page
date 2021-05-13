@@ -2,8 +2,12 @@ package com.sh.admin.repository;
 
 import com.sh.admin.AdminApplicationTests;
 import com.sh.admin.model.entity.User;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Assert;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
@@ -54,8 +58,20 @@ public class UserRepositoryTest extends AdminApplicationTests {
     }
 
     @Test
+    @Transactional
     public void delete() {
+        
+        Optional<User> user = userRepository.findById(1L);
 
+        Assertions.assertTrue(user.isPresent());
+
+        user.ifPresent(selectUser -> {
+            userRepository.delete(selectUser);
+        });
+        
+        Optional<User> deleteUser = userRepository.findById(1L);
+
+        Assertions.assertFalse(deleteUser.isPresent());
 
     }
 
