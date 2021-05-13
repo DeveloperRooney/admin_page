@@ -21,7 +21,7 @@ public class UserRepositoryTest extends AdminApplicationTests {
     @Test
     public void create() {
         User user = new User();
-        user.setAccount("안대근");
+        user.setAccount("김수한");
         user.setEmail("suhan0218@naver.com");
         user.setPhone("010-4063-0056");
         user.setCreatedAt(LocalDateTime.now());
