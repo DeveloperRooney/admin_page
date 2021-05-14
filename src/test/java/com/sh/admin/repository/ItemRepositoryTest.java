@@ -12,7 +12,7 @@ import java.util.Optional;
 public class ItemRepositoryTest extends AdminApplicationTests {
 
     @Autowired
-    private ItemReposiroty itemReposiroty;
+    private ItemRepositoty itemRepository;
 
     @Test
     public void create() {
@@ -22,7 +22,7 @@ public class ItemRepositoryTest extends AdminApplicationTests {
         item.setPrice(100000);
         item.setContents("삼성 노트북");
 
-        Item newItem = itemReposiroty.save(item);
+        Item newItem = itemRepository.save(item);
 
         Assertions.assertNotNull(newItem);
 
@@ -32,7 +32,7 @@ public class ItemRepositoryTest extends AdminApplicationTests {
     @Test
     public void read() {
 
-        Optional<Item> item = itemReposiroty.findById(1L);
+        Optional<Item> item = itemRepository.findById(1L);
 
         Assertions.assertTrue(item.isPresent());
 

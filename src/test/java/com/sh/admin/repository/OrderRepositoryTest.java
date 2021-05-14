@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
 
-public class OrederRepositoryTest extends AdminApplicationTests {
+public class OrderRepositoryTest extends AdminApplicationTests {
 
     @Autowired
     private OrderDetailRepository orderDetailRepository;
