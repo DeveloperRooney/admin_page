@@ -12,7 +12,7 @@ import java.util.Optional;
 public class ItemRepositoryTest extends AdminApplicationTests {
 
     @Autowired
-    private ItemRepositoty itemRepository;
+    private ItemRepository itemRepository;
 
     @Test
     public void create() {

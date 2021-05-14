@@ -37,6 +37,7 @@ public class UserRepositoryTest extends AdminApplicationTests {
 
         // select * from user where id = ?
         Optional<User> user = userRepository.findByAccount("김수한");
+//        Optional<User> user = userRepository.findById(1L);
 
         user.ifPresent(selectUser -> {
 
@@ -46,6 +47,10 @@ public class UserRepositoryTest extends AdminApplicationTests {
                 System.out.println(item);
             }));
         });
+
+//        user.ifPresent(selectUser -> {
+//            System.out.println(selectUser);
+//        });
 
     }
 
@@ -68,7 +73,7 @@ public class UserRepositoryTest extends AdminApplicationTests {
     @Transactional
     public void delete() {
         
-        Optional<User> user = userRepository.findById(1L);
+        Optional<User> user = userRepository.findById(2L);
 
         Assertions.assertTrue(user.isPresent());
 
@@ -76,7 +81,7 @@ public class UserRepositoryTest extends AdminApplicationTests {
             userRepository.delete(selectUser);
         });
         
-        Optional<User> deleteUser = userRepository.findById(1L);
+        Optional<User> deleteUser = userRepository.findById(2L);
 
         Assertions.assertFalse(deleteUser.isPresent());
 

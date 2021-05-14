@@ -20,11 +20,11 @@ public class OrderRepositoryTest extends AdminApplicationTests {
         
         od.setOrderAt(LocalDateTime.now());
         
-        // 상품 인덱스
-//        od.setItemId(1L);
+//         상품 인덱스
+//        od.setItem(1L);
 
-        // 유저 인덱스
-//        od.setUserId(4L);
+//         유저 인덱스
+//        od.setUser();
 
         OrderDetail newOd = orderDetailRepository.save(od);
 
