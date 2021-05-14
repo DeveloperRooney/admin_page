@@ -24,7 +24,7 @@ public class UserRepositoryTest extends AdminApplicationTests {
         User user = new User();
         user.setAccount("김수한");
         user.setEmail("suhan0218@naver.com");
-        user.setPhone("010-4063-0056");
+//        user.setPhone("010-4063-0056");
         user.setCreatedAt(LocalDateTime.now());
         user.setCreatedBy("admin");
 
@@ -43,8 +43,8 @@ public class UserRepositoryTest extends AdminApplicationTests {
 
             selectUser.getOrderDetailList().stream().forEach((detail-> {
 
-                Item item = detail.getItem();
-                System.out.println(item);
+//                Item item = detail.getItem();
+//                System.out.println(item);
             }));
         });
 

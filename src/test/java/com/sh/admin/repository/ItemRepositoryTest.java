@@ -20,7 +20,7 @@ public class ItemRepositoryTest extends AdminApplicationTests {
         Item item = new Item();
         item.setName("노트북");
         item.setPrice(100000);
-        item.setContents("삼성 노트북");
+        item.setContent("삼성 노트북");
 
         Item newItem = itemRepository.save(item);
 

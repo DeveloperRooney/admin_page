@@ -9,5 +9,4 @@ import java.util.Optional;
 @Repository
 interface ItemRepository extends JpaRepository<Item, Long> {
 
-    Optional<Item> findByName(String name);
 }

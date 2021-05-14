@@ -40,9 +40,4 @@ public class User {
 
     private String updatedBy;
 
-    
-    // 1 : N 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user") // mappedBy 에서 어느 변수와 연결시킬 것인지 지정
-    private List<OrderDetail> orderDetailList;
-
 }
