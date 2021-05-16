@@ -49,6 +49,6 @@ public class OrderGroup {
     private String updatedBy;
 
     @ManyToOne
-    private User userId;
+    private User user;
 
 }

@@ -48,9 +48,10 @@ public class UserRepositoryTest extends AdminApplicationTests {
     }
 
     @Test
+    @Transactional
     public void read() {
 
-        User user = userRepository.findFirstByPhoneNumberOrderByIdDesc("01000000000");
+        User user = userRepository.findFirstByPhoneNumberOrderByIdDesc("010-4063-0056");
 
         Assertions.assertNotNull(user);
 
