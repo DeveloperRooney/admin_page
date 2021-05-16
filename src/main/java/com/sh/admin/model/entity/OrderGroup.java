@@ -9,6 +9,7 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -47,7 +48,7 @@ public class OrderGroup {
 
     private String updatedBy;
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "")
+    @ManyToOne
     private User userId;
 
 }
