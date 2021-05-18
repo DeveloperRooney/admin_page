@@ -15,7 +15,6 @@ public class PartnerRepositoryTest extends AdminApplicationTests {
     private PartnerRepository partnerRepository;
 
     @Test
-    @Transactional
     public void create() {
 
         Partner partner = new Partner();
@@ -26,7 +25,7 @@ public class PartnerRepositoryTest extends AdminApplicationTests {
         partner.setCallCenter("070-0000-0000");
         partner.setPartnerNumber("010-1111-2222");
         partner.setBusinessNumber("123456789");
-        partner.setCeoName("010-1111-2222");
+        partner.setCeoName("홍길동");
         partner.setRegisteredAt(LocalDateTime.now());
         partner.setCreatedAt(LocalDateTime.now());
         partner.setCreatedBy("AdminServer");

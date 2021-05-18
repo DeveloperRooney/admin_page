@@ -19,17 +19,18 @@ public class ItemRepositoryTest extends AdminApplicationTests {
     public void create() {
 
         Item item = new Item();
-        item.setStatus("REGISTERED");
-        item.setName("노트북");
-        item.setPrice(100000);
-        item.setContent("삼성 노트북");
+        item.setStatus("UNREGISTERED");
+        item.setName("삼성 노트북");
         item.setTitle("SAMSUNG NOTEBOOK");
+        item.setContent("삼성 노트북입니다.");
+        item.setPrice(900000);
+        item.setBrandName("삼성");
+        item.setRegisteredAt(LocalDateTime.now());
         item.setCreatedAt(LocalDateTime.now());
-        item.setCreatedBy("AdminServer");
+        item.setCreatedBy("파트너01");
         item.setPartnerId(1L);
 
         Item newItem = itemRepository.save(item);
-
         Assertions.assertNotNull(newItem);
 
 
