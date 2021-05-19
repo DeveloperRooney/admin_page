@@ -25,7 +25,7 @@ public class OrderGroupRepositoryTest extends AdminApplicationTests {
         orderGroup.setPaymentType("CARD");
         orderGroup.setTotalPrice(BigDecimal.valueOf(900000));
         orderGroup.setTotalQuantity(1);
-        orderGroup.setOrderAt(LocalDateTime.now());
+        orderGroup.setOrderAt(LocalDateTime.now().minusDays(2));
         orderGroup.setArrivalDate(LocalDateTime.now());
         orderGroup.setCreatedAt(LocalDateTime.now());
         orderGroup.setCreatedBy("AdminServer");
