@@ -38,8 +38,6 @@ public class OrderDetail {
 
     private String updatedBy;
 
-    private Long itemId;
-
     // OrderDetail N : 1 Item
     @ManyToOne
     private Item item;
