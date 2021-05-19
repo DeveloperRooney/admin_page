@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class OrderRepositoryTest extends AdminApplicationTests {
+public class OrderDetailRepositoryTest extends AdminApplicationTests {
 
     @Autowired
     private OrderDetailRepository orderDetailRepository;
@@ -23,7 +23,7 @@ public class OrderRepositoryTest extends AdminApplicationTests {
         od.setArrivalDate(LocalDateTime.now().plusDays(2));
         od.setQuantity(1);
         od.setTotalPrice(BigDecimal.valueOf(900000));
-        od.setOrderGroupId(1L);
+//        od.setOrderGroupId(1L);
         od.setItemId(1L);
         od.setCreatedAt(LocalDateTime.now());
         od.setCreatedBy("AdminServer");
