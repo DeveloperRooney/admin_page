@@ -29,7 +29,7 @@ public class PartnerRepositoryTest extends AdminApplicationTests {
         partner.setRegisteredAt(LocalDateTime.now());
         partner.setCreatedAt(LocalDateTime.now());
         partner.setCreatedBy("AdminServer");
-        partner.setCategoryId(1L);
+//        partner.setCategoryId(1L);
 
         partnerRepository.save(partner);
 

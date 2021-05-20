@@ -22,11 +22,11 @@ public class UserRepositoryTest extends AdminApplicationTests {
     @Test
     public void create() {
 
-        String account = "suhan0218";
-        String password = "suhan1994";
+        String account = "Test03";
+        String password = "Test03";
         String status = "REGISTERED";
-        String email = "han_0427@naver.com";
-        String phoneNumber = "01000000000";
+        String email = "Test03@naver.com";
+        String phoneNumber = "010-1111-3333";
         LocalDateTime registeredAt = LocalDateTime.now();
         LocalDateTime createdAt = LocalDateTime.now();
         String createdBy = "AdminServer";
@@ -64,6 +64,8 @@ public class UserRepositoryTest extends AdminApplicationTests {
 
             System.out.println("----- 주문 상세 -----");
             orderGroup.getOrderDetailList().stream().forEach(orderDetail -> {
+                System.out.println("파트너사 이름 : " + orderDetail.getItem().getPartner().getName());
+                System.out.println("파트너사 카테고리 : " + orderDetail.getItem().getPartner().getCategory().getTitle());
                 System.out.println("주문 상품 : " + orderDetail.getItem().getName());
                 System.out.println("고객센터 번호 : " + orderDetail.getItem().getPartner().getCallCenter());
                 System.out.println("주문 상태 : " + orderDetail.getStatus());

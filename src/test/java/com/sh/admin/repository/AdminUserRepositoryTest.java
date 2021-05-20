@@ -17,12 +17,12 @@ public class AdminUserRepositoryTest extends AdminApplicationTests {
 
         AdminUser user = new AdminUser();
 
-        user.setAccount("han_0427");
-        user.setPassword("suhan1994");
+        user.setAccount("AdminUser03");
+        user.setPassword("AdminUser03");
         user.setStatus("REGISTERED");
         user.setRole("PARTNER");
-        user.setCreatedBy("AdminServer");
-        user.setCreatedAt(LocalDateTime.now());
+//        user.setCreatedBy("AdminServer");
+//        user.setCreatedAt(LocalDateTime.now());
 
         adminUserRepository.save(user);
 
