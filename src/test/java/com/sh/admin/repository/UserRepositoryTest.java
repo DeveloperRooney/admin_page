@@ -20,13 +20,14 @@ public class UserRepositoryTest extends AdminApplicationTests {
     private UserRepository userRepository;
 
     @Test
+    @Transactional
     public void create() {
 
-        String account = "Test03";
-        String password = "Test03";
+        String account = "Test04";
+        String password = "Test04";
         String status = "REGISTERED";
-        String email = "Test03@naver.com";
-        String phoneNumber = "010-1111-3333";
+        String email = "Test04@naver.com";
+        String phoneNumber = "010-1111-4444";
         LocalDateTime registeredAt = LocalDateTime.now();
         LocalDateTime createdAt = LocalDateTime.now();
         String createdBy = "AdminServer";
@@ -39,8 +40,13 @@ public class UserRepositoryTest extends AdminApplicationTests {
         user.setPassword(password);
         user.setEmail(email);
         user.setRegisteredAt(registeredAt);
-        user.setCreatedAt(createdAt);
-        user.setCreatedBy(createdBy);
+
+        User u = User.builder().
+                account(account).
+                password(password).
+                status(status).
+                email(email).
+                build();
 
         User newUser = userRepository.save(user);
 
