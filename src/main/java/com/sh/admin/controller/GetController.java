@@ -1,6 +1,7 @@
 package com.sh.admin.controller;
 
 import com.sh.admin.model.SearchParam;
+import com.sh.admin.model.network.Header;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,5 +25,11 @@ public class GetController {
         System.out.println(searchParam.getPage());
 
         return searchParam;
+    }
+
+    @GetMapping("/header")
+    public Header getHeader() {
+
+        return Header.builder().resultCode("OK").description("OK").build();
     }
 }
