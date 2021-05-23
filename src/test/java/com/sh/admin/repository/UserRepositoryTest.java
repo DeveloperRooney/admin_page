@@ -55,6 +55,16 @@ public class UserRepositoryTest extends AdminApplicationTests {
 
     @Test
     @Transactional
+    public void readUser() {
+
+        Optional<User> user = userRepository.findByAccount("suhan0218");
+
+        System.out.println(user.get().getEmail());
+    }
+
+
+    @Test
+    @Transactional
     public void read() {
 
         User user = userRepository.findFirstByPhoneNumberOrderByIdDesc("01000000000");
